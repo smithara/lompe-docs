@@ -1,0 +1,4 @@
+sphinx
+myst-nb
+sphinx-book-theme
+# ./lompe[extras]  # not working unless using --editable

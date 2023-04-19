@@ -5,37 +5,42 @@
 
 import os
 import subprocess
+# import sys
 
-# -- Custom steps to make the subprojects available here ---------------------
-# WARNING: This should be run in a clean environment
-#   because it installs the packages downloaded here
-# Ensure we have the latest versions, in the docs project root
-conf_dir = os.path.dirname(os.path.abspath(__file__))
-project_dir = os.path.dirname(conf_dir)
-repo_urls = {
-    "lompe": "https://github.com/klaundal/lompe.git"
-}
-repo_paths = {_name: os.path.join(project_dir, _name) for _name in repo_urls.keys()}
-for _name in repo_urls.keys():
-    _repo_url = repo_urls[_name]
-    _repo_path = repo_paths[_name]
-    if not os.path.exists(_repo_path):
-        subprocess.run(["git", "clone", _repo_url, _repo_path])
-    else:
-        subprocess.run(["git", "-C", _repo_path, "fetch"])
-        subprocess.run(["git", "-C", _repo_path, "checkout", "main"])
-        subprocess.run(["git", "-C", _repo_path, "reset", "--hard", "origin/main"])
-    subprocess.run(["git", "-C", _repo_path, "submodule", "update", "--init"])
-# Install those projects
-# for _name, _repo_path in repo_paths.items():
-#     subprocess.run(["python", "-m", "pip", "install", "--editable", _repo_path])
-lompe_path = repo_paths["lompe"]
-subprocess.run(["python", "-m", "pip", "install", "--editable", f"{lompe_path}[extras]"])
-# Make shorter link to the examples directory
-examples_path_inside_lompe = os.path.join(lompe_path, "examples")
-examples_shortcut = os.path.join(conf_dir, "examples")
-if not os.path.exists(examples_shortcut):
-    subprocess.run(["ln", "-s", examples_path_inside_lompe, examples_shortcut])
+# # Ensure we use the same python executable as is running now
+# python = sys.executable
+
+# # -- Custom steps to make the subprojects available here ---------------------
+# # -- (now replaced by attaching Lompe as submodule)
+# # WARNING: This should be run in a clean environment
+# #   because it installs the packages downloaded here
+# # Ensure we have the latest versions, in the docs project root
+# conf_dir = os.path.dirname(os.path.abspath(__file__))
+# project_dir = os.path.dirname(conf_dir)
+# repo_urls = {
+#     "lompe": "https://github.com/klaundal/lompe.git"
+# }
+# repo_paths = {_name: os.path.join(project_dir, _name) for _name in repo_urls.keys()}
+# for _name in repo_urls.keys():
+#     _repo_url = repo_urls[_name]
+#     _repo_path = repo_paths[_name]
+#     if not os.path.exists(_repo_path):
+#         subprocess.run(["git", "clone", _repo_url, _repo_path])
+#     else:
+#         subprocess.run(["git", "-C", _repo_path, "fetch"])
+#         subprocess.run(["git", "-C", _repo_path, "checkout", "main"])
+#         subprocess.run(["git", "-C", _repo_path, "reset", "--hard", "origin/main"])
+#     subprocess.run(["git", "-C", _repo_path, "submodule", "update", "--init", "--recursive"])
+# # Install those projects
+# # for _name, _repo_path in repo_paths.items():
+# #     subprocess.run([python, "-m", "pip", "install", "--editable", _repo_path])
+# lompe_path = repo_paths["lompe"]
+# subprocess.run([python, "-m", "pip", "install", "--editable", f"{lompe_path}[extras]"])
+# # Make shorter link to the examples directory
+# examples_path_inside_lompe = os.path.join(lompe_path, "examples")
+# examples_shortcut = os.path.join(conf_dir, "examples")
+# if not os.path.exists(examples_shortcut):
+#     subprocess.run(["ln", "-s", examples_path_inside_lompe, examples_shortcut])
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information

@@ -1,0 +1,3 @@
+[submodule "lompe"]
+	path = lompe
+	url = https://github.com/klaundal/lompe.git
