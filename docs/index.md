@@ -19,11 +19,12 @@ intro
 .. autosummary::
     :recursive:
     :toctree: reference
-    :caption: Sub-packages reference
+    :caption: Other packages reference
 
-    lompe.dipole
-    lompe.polplot
-    lompe.secsy
+    dipole
+    polplot
+    ppigrf
+    secsy
 
 ```
 

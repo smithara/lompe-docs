@@ -1,0 +1,8 @@
+name: lompe-docs
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - fortran-compiler
+  - pip:
+    - -r requirements.txt

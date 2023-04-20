@@ -1,4 +1,8 @@
 sphinx
 myst-nb
 sphinx-book-theme
-# ./lompe[extras]  # not working unless using --editable
+-e ./dipole
+-e ./polplot
+-e ./secsy
+-e ./ppigrf
+-e ./lompe[extras,local]
