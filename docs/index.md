@@ -45,3 +45,9 @@ examples/code_paper_figures/*
 :glob:
 examples/lompe_paper_figures/*
 ```
+
+```{toctree}
+:caption: Examples... experimental
+:glob:
+examples/experimental/*
+```
