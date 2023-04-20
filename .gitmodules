@@ -1,3 +1,15 @@
 [submodule "lompe"]
 	path = lompe
 	url = https://github.com/klaundal/lompe.git
+[submodule "dipole"]
+	path = dipole
+	url = https://github.com/klaundal/dipole.git
+[submodule "ppigrf"]
+	path = ppigrf
+	url = https://github.com/klaundal/ppigrf.git
+[submodule "secsy"]
+	path = secsy
+	url = https://github.com/klaundal/secsy.git
+[submodule "polplot"]
+	path = polplot
+	url = https://github.com/klaundal/polplot.git
