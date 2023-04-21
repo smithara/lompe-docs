@@ -3,6 +3,11 @@
 <!-- Project background -->
 ```{toctree}
 intro
+About Lompe <lompe/README>
+About dipole <dipole/README>
+About polplot <polplot/README>
+About ppigrf <ppigrf/README>
+About secsy <secsy/README>
 ```
 
 <!-- API reference generated from docstrings -->
