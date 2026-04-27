@@ -9,10 +9,10 @@ jobs:
     name: Build documentation
     runs-on: "ubuntu-latest"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.10"
       - name: Install environment + Lompe + others
@@ -21,7 +21,7 @@ jobs:
       - name: Sphinx build
         run: make -C docs html
       - name: Upload artifact to pass to GitHub Pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v5
         with:
           path: docs/_build/html
 
