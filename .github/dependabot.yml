@@ -5,3 +5,6 @@ updates:
     schedule:
         interval: "daily"
     directory: /
+    auto-merge:
+      enabled: true
+      squash: true
